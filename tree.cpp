@@ -30,17 +30,6 @@ Tree::~Tree(){
 
 
 
-/*Tree::Node::~Node(){
-	if(faves != nullptr){	
-		delete faves;
-		faves = nullptr;
-	}
-	left = nullptr;
-	right = nullptr;
-}*/
-
-
-
 //Data Initialization
 void Tree::dataInit(){
 	ifstream infile;
@@ -71,8 +60,6 @@ void Tree::dataInit(){
 		
 		if(infile.peek() == '\n') infile.get();
 	
-		//add->favesInit(topic, keyword, website, summary, review, rating);
-		
 		insert(root, add);
 
 		delete [] topic;
@@ -126,8 +113,6 @@ void Tree::insert(){
 	cin >> rating;
 	cin.ignore();
 	add->setRating(rating);
-
-	//add->favesInit(topic, keyword, website, summary, review, rating);
 
 	insert(root, add);
 
@@ -214,19 +199,11 @@ void Tree::insert(Node*& start, Data*& add){
 //Private Remove Topic Function
 void Tree::removeTopic(char* topic, Node*& start){
 	if(start != nullptr){
+		removeTopic(topic, start->left);
+		removeTopic(topic, start->right);
 		int check = strcmp(topic, start->faves->getTopic());
 		if(check == 0){	
 			removeNode(start);
-			size--;
-			return;
-		}
-
-		else if(check < 0){
-			removeTopic(topic, start->left);
-		}
-		
-		else{
-			removeTopic(topic, start->right);
 		}
 	}
 }
