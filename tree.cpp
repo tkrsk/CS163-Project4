@@ -1,10 +1,3 @@
-//Taka Masagatani
-//CS260
-//Fall 2020
-//Project 4
-//cpp file for BST ADT
-//tree.cpp
-
 #include "tree.h"
 
 //Constructor

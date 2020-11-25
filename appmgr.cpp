@@ -1,10 +1,3 @@
-//Taka Masagatani
-//CS260
-//Fall 2020
-//Project 4
-//cpp file for main app's manager module
-//appmgr.cpp
-
 #include "appmgr.h"
 
 using namespace std;

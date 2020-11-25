@@ -1,9 +1,3 @@
-//Taka Masagatani
-//CS260
-//Fall 2020
-//Project 4
-//Header file for data module
-//data.h
 #pragma once
 
 #include <iostream>
